@@ -1,0 +1,4 @@
+# Minimal dependencies for server.py
+flask==3.0.0
+# Gunicorn is the WSGI server used by Render to run Flask
+gunicorn==21.2.0
