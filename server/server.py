@@ -7,7 +7,7 @@ from flask import (
     Flask, request, jsonify, render_template, redirect,
     url_for, session, abort
 )
-
+app = Flask(__name__)
 # --------------------
 # CONFIG
 # --------------------
