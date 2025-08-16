@@ -3,9 +3,9 @@ services:
     name: ff-bot-server
     env: python
     plan: free
-    rootDir: .
+    rootDir: .               # this file is inside the server/ folder
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn server:app
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT
     envVars:
       - key: FF_ADMIN_USER
         value: admin
@@ -15,3 +15,4 @@ services:
         value: my_secret_api_key_12345
       - key: FF_USE_HTTPS
         value: "false"
+
