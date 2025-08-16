@@ -3,7 +3,7 @@ services:
     name: ff-bot-server
     env: python
     plan: free
-    rootDir: .         # points to your server folder
+    rootDir: .
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn server:app
     envVars:
