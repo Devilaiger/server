@@ -376,13 +376,10 @@ def dashboard_notifications():
 # MAIN
 # --------------------
 if __name__ == "__main__":
-    print(f"\n🌐 Server will run on: http://localhost:5000")
-    print(f"📱 Admin panel: http://localhost:5000")
+    port = int(os.environ.get("PORT", 5000))
+    print(f"\n🌐 Server will run on port {port}")
+    print(f"📱 Admin panel: http://localhost:{port}")
     print(f"👤 Login with: {ADMIN_USERNAME} / {ADMIN_PASSWORD}")
     print("\n" + "="*50)
-    
-    # Run without HTTPS for development
-    if USE_HTTPS:
-        app.run(host="0.0.0.0", port=5000, ssl_context=(CERT_FILE, KEY_FILE), debug=True)
-    else:
-        app.run(host="0.0.0.0", port=5000, debug=True)
+
+    app.run(host="0.0.0.0", port=port, debug=True)
